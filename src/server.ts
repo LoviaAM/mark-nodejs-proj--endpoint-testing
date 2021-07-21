@@ -23,6 +23,8 @@ app.get("/", (req, res) => {
   });
 });
 
+// multip object in the res.json
+
 app.get("/help", (req, res) => {
   res.json({
     location: HANDFORTH_PARISH_COUNCIL,
@@ -62,6 +64,21 @@ app.get("/quest/decline", (req, res) => {
         description: "A short but fierce looking demon-thing",
       },
       text: "You FOOL! You have made a mistake. Now you will suffer.",
+    },
+    options: {
+      restart: "/",
+    },
+  });
+});
+app.get("/quest/start/impossible", (req, res) => {
+  res.json({
+    location: "Apocalypse",
+    speech: {
+      speaker: {
+        name: "Titan, Destroyer of Worlds",
+        description: "A short but fierce looking demon-thing",
+      },
+      text: "You Dragon! The fireball left me in excruciating pain.",
     },
     options: {
       restart: "/",
